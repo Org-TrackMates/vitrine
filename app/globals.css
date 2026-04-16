@@ -76,6 +76,14 @@
   }
 }
 
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-6px); }
+  40% { transform: translateX(6px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(4px); }
+}
+
 /* ═══════════════════════════════════════════════════════════════
    BASE
    ═══════════════════════════════════════════════════════════════ */
@@ -183,4 +191,14 @@
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
   }
+
+  /* Shake du formulaire waitlist sur email invalide.
+     Classe toggled en JS (classList.remove/add + reflow) — elle doit
+     exister statiquement en CSS car Tailwind ne peut pas la détecter
+     dans le markup. */
+  .animate-shake-form {
+    animation: shake 0.4s;
+  }
+
+
 }

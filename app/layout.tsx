@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "TrackMates — La course se vit mieux ensemble.",
     description:
-      "Weekends tout compris depuis Paris vers les circuits ELMS. Saison 2027 : 6 circuits, 5 pays.",
+      "Weekends tout compris depuis Paris vers les circuits ELMS. Saison 2027 : 6 circuits, 6 pays.",
     url: "https://trackmates.fr",
     siteName: "TrackMates",
     locale: "fr_FR",

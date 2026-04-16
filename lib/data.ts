@@ -1,6 +1,8 @@
 export type TransportKind = "fly" | "train" | "finale";
 
 export interface Circuit {
+  slug: string; // "barcelona" — id stable utilisé côté DB (waitlist)
+  flag: string; // emoji drapeau seul, utilisable dans les formulaires
   round: string; // "R1 · 🇪🇸 Espagne"
   name: string;
   location: string;
@@ -15,6 +17,8 @@ export interface Circuit {
 
 export const circuits2027: Circuit[] = [
   {
+    slug: "barcelona",
+    flag: "🇪🇸",
     round: "R1 · 🇪🇸 Espagne",
     name: "Barcelone",
     location: "Circuit de Catalunya",
@@ -27,6 +31,8 @@ export const circuits2027: Circuit[] = [
     badgeKind: "fly",
   },
   {
+    slug: "paul-ricard",
+    flag: "🇫🇷",
     round: "R2 · 🇫🇷 France",
     name: "Paul Ricard",
     location: "Circuit Paul Ricard · Le Castellet",
@@ -39,6 +45,8 @@ export const circuits2027: Circuit[] = [
     badgeKind: "train",
   },
   {
+    slug: "imola",
+    flag: "🇮🇹",
     round: "R3 · 🇮🇹 Italie",
     name: "Imola",
     location: "Autodromo Enzo e Dino Ferrari",
@@ -51,6 +59,8 @@ export const circuits2027: Circuit[] = [
     badgeKind: "fly",
   },
   {
+    slug: "spa",
+    flag: "🇧🇪",
     round: "R4 · 🇧🇪 Belgique",
     name: "Spa",
     location: "Circuit de Spa-Francorchamps",
@@ -63,6 +73,8 @@ export const circuits2027: Circuit[] = [
     badgeKind: "train",
   },
   {
+    slug: "silverstone",
+    flag: "🇬🇧",
     round: "R5 · 🇬🇧 Royaume-Uni",
     name: "Silverstone",
     location: "Silverstone Circuit",
@@ -75,6 +87,8 @@ export const circuits2027: Circuit[] = [
     badgeKind: "train",
   },
   {
+    slug: "portimao",
+    flag: "🇵🇹",
     round: "R6 · 🇵🇹 Portugal",
     name: "Portimão",
     location: "Autodromo Internacional do Algarve",
@@ -127,7 +141,7 @@ export const roadmapPhases: RoadmapPhase[] = [
         text: "— depuis Paris et villes partenaires",
       },
       {
-        title: "Prix dès 393 €",
+        title: "Prix TBA",
         text: "par personne, tout compris, aller-retour",
       },
     ],
@@ -144,22 +158,21 @@ export const roadmapPhases: RoadmapPhase[] = [
     items: [
       {
         title: "Bronze",
-        text: "— Weekend course · Camping sur circuit · dès 274 €",
+        text: "— Weekend course · Camping sur circuit",
       },
       {
         title: "Silver",
-        text: "— Vendredi au dimanche · Camping 2 nuits · dès 311 €",
+        text: "— Vendredi au dimanche · Camping 2 nuits",
       },
       {
         title: "Gold",
-        text: "— Semaine complète · Glamping officiel ACO · dès 590 €",
+        text: "— Semaine complète · Glamping officiel ACO",
       },
       {
         title: "Platinum",
-        text: "— 6 jours · Hôtel + Tribune VIP + Paddock pass · dès 1 025 €",
+        text: "— 6 jours · Hôtel + Tribune VIP + Paddock pass",
       },
     ],
-    milestone:
-      "Bundle \u201CRoad to Le Mans\u201D — Saison ELMS + 24h du Mans · dès 2 726 €",
+    milestone: "Bundle \u201CRoad to Le Mans\u201D — Saison ELMS + 24h du Mans",
   },
 ];
