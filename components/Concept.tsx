@@ -83,15 +83,15 @@ export default function Concept() {
         {cards.map(({ icon, title, desc }) => (
           <div
             key={title}
-            className="p-8 bg-(--bg-2) hover:bg-(--bg-3) transition-colors duration-200"
+            className="p-8 bg-bg-2 hover:bg-bg-3 transition-colors duration-200"
           >
             <div className="w-9 h-9 rounded-lg flex items-center justify-center mb-4 bg-red/15 border border-red/20 text-red">
               {icon}
             </div>
-            <h3 className="font-display text-[14px] font-bold tracking-[-0.01em] text-(--text) mb-2">
+            <h3 className="font-display text-[14px] font-bold tracking-[-0.01em] text-text mb-2">
               {title}
             </h3>
-            <p className="text-[13px] leading-[1.75] text-(--text-2)">{desc}</p>
+            <p className="text-[13px] leading-[1.75] text-text-2">{desc}</p>
           </div>
         ))}
       </div>

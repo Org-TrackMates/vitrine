@@ -67,7 +67,7 @@ export default function Countdown() {
   ];
 
   return (
-    <section className="relative overflow-hidden text-center bg-(--bg-2) border-y border-white/[0.07] py-20 px-10 md:py-14 md:px-5">
+    <section className="relative overflow-hidden text-center bg-bg-2 border-y border-white/[0.07] py-20 px-10 md:py-14 md:px-5">
       {/* Glow */}
       <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,rgba(200,56,42,0.05)_0%,transparent_60%)]" />
 
@@ -76,7 +76,7 @@ export default function Countdown() {
           Compte à rebours
         </div>
 
-        <p className="font-serif italic text-(--text-2) text-[clamp(1.5rem,3vw,2.2rem)] mb-12">
+        <p className="font-serif italic text-text-2 text-[clamp(1.5rem,3vw,2.2rem)] mb-12">
           Ouverture des réservations — 1er janvier 2027
         </p>
 
@@ -88,13 +88,13 @@ export default function Countdown() {
                   :
                 </span>
               )}
-              <div className="bg-(--bg-3) border border-white/12 rounded-xl py-8 px-10 min-w-30 md:py-5 md:px-4 md:min-w-18 hover:border-red transition-colors duration-300">
+              <div className="bg-bg-3 border border-white/12 rounded-xl py-8 px-10 min-w-30 md:py-5 md:px-4 md:min-w-18 hover:border-red transition-colors duration-300">
                 <span
-                  className={`block font-display font-extrabold leading-none tracking-tighter text-[clamp(2.5rem,6vw,4rem)] md:text-[2rem] transition-colors duration-300 ${flashing === id ? "text-red" : "text-(--text)"}`}
+                  className={`block font-display font-extrabold leading-none tracking-tighter text-[clamp(2.5rem,6vw,4rem)] md:text-[2rem] transition-colors duration-300 ${flashing === id ? "text-red" : "text-text"}`}
                 >
                   {val}
                 </span>
-                <span className="block font-display text-[10px] font-semibold tracking-[0.2em] uppercase text-(--text-3) mt-2">
+                <span className="block font-display text-[10px] font-semibold tracking-[0.2em] uppercase text-text-3 mt-2">
                   {label}
                 </span>
               </div>
@@ -102,7 +102,7 @@ export default function Countdown() {
           ))}
         </div>
 
-        <p className="text-[13px] tracking-[0.05em] text-(--text-3)">
+        <p className="text-[13px] tracking-[0.05em] text-text-3">
           Inscris-toi maintenant pour être notifié en avant-première —{" "}
           <strong className="text-red font-medium">
             places limitées par circuit.

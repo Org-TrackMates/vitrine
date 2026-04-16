@@ -14,7 +14,7 @@ export default function Saison() {
       className="fade-up mx-auto max-w-225 px-5 pb-20 sm:px-8 sm:pb-24 md:px-10"
     >
       <SectionEyebrow>Saison ELMS 2027</SectionEyebrow>
-      <SectionTitle>6 circuits. 5 pays. 1 saison.</SectionTitle>
+      <SectionTitle>6 circuits. 6 pays. 1 saison.</SectionTitle>
       <SectionLead>
         «&nbsp;L&apos;European Le Mans Series — la route officielle vers les 24
         Heures du Mans. Chaque vainqueur reçoit une invitation automatique pour
@@ -64,7 +64,7 @@ function CircuitCard({ circuit }: { circuit: Circuit }) {
 
       <div className="font-display text-[1.1rem] font-extrabold tracking-[-0.02em] text-text">
         {/* dès {circuit.priceFrom} € */}
-        {circuit.priceFrom}
+        Prix: {circuit.priceFrom}
       </div>
       <div className="text-[10px] text-text-3">
         {/* / personne · */} groupe: TBD.

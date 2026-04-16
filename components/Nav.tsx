@@ -33,7 +33,7 @@ export default function Nav() {
         {/* Brand */}
         <Link
           href="#"
-          className="flex items-center gap-2 font-display font-extrabold text-base tracking-tight text-(--text) no-underline"
+          className="flex items-center gap-2 font-display font-extrabold text-base tracking-tight text-text no-underline"
         >
           <span className="w-1.75 h-1.75 rounded-full bg-red shrink-0 animate-[pulse_2s_infinite]" />
           <div>
@@ -47,7 +47,7 @@ export default function Nav() {
             <li key={href}>
               <a
                 href={href}
-                className="text-[13px] text-(--text-2) no-underline transition-colors hover:text-(--text)"
+                className="text-[13px] text-text-2 no-underline transition-colors hover:text-text"
               >
                 {label}
               </a>
@@ -71,13 +71,13 @@ export default function Nav() {
           className="md:hidden flex flex-col justify-center items-center w-8 h-8 gap-1.25 bg-transparent border-none cursor-pointer p-1"
         >
           <span
-            className={`block w-5 h-[1.5px] rounded-sm bg-(--text) transition-all duration-200 ${open ? "translate-y-[6.5px] rotate-45" : ""}`}
+            className={`block w-5 h-[1.5px] rounded-sm bg-text transition-all duration-200 ${open ? "translate-y-[6.5px] rotate-45" : ""}`}
           />
           <span
-            className={`block w-5 h-[1.5px] rounded-sm bg-(--text) transition-all duration-200 ${open ? "opacity-0 scale-x-0" : ""}`}
+            className={`block w-5 h-[1.5px] rounded-sm bg-text transition-all duration-200 ${open ? "opacity-0 scale-x-0" : ""}`}
           />
           <span
-            className={`block w-5 h-[1.5px] rounded-sm bg-(--text) transition-all duration-200 ${open ? "-translate-y-[6.5px] -rotate-45" : ""}`}
+            className={`block w-5 h-[1.5px] rounded-sm bg-text transition-all duration-200 ${open ? "-translate-y-[6.5px] -rotate-45" : ""}`}
           />
         </button>
       </nav>
@@ -91,7 +91,7 @@ export default function Nav() {
             key={href}
             href={href}
             onClick={close}
-            className="block py-3.5 font-display text-[15px] font-semibold text-(--text-2) no-underline border-b border-white/[0.07] transition-colors hover:text-(--text)"
+            className="block py-3.5 font-display text-[15px] font-semibold text-text-2 no-underline border-b border-white/[0.07] transition-colors hover:text-text"
           >
             {label}
           </a>

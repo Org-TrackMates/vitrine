@@ -115,37 +115,6 @@ trackmates/
 
 ---
 
-## API Waitlist
-
-### `GET /api/waitlist`
-Retourne le nombre d'inscrits.
-
-```json
-{ "count": 42 }
-```
-
-### `POST /api/waitlist`
-Inscrit une personne.
-
-**Body**
-```json
-{ "name": "Lucas", "email": "lucas@example.fr" }
-```
-
-**Réponse succès**
-```json
-{ "success": true, "count": 43 }
-```
-
-**Réponse erreur**
-```json
-{ "error": "Email invalide" }
-```
-
-> Les doublons (même email) sont ignorés silencieusement grâce au `ON CONFLICT DO NOTHING`.
-
----
-
 ## Variables d'environnement
 
 Toutes injectées automatiquement par Vercel lors de la connexion de la base :
@@ -159,13 +128,3 @@ Toutes injectées automatiquement par Vercel lors de la connexion de la base :
 | `POSTGRES_PASSWORD` | Mot de passe |
 | `POSTGRES_DATABASE` | Nom de la base |
 
----
-
-## Domaine custom (trackmates.fr)
-
-1. Vercel dashboard → ton projet → **Settings** → **Domains**
-2. Ajoute `trackmates.fr` et `www.trackmates.fr`
-3. Chez ton registrar, configure les DNS :
-   - `A` record → `76.76.21.21`
-   - `CNAME www` → `cname.vercel-dns.com`
-4. Le certificat SSL est généré automatiquement par Vercel (Let's Encrypt)
