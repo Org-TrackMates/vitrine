@@ -67,7 +67,7 @@ export default function WaitlistForm({
       }
     }
 
-    const id = setInterval(fetchCount, POLL_INTERVAL_MS);
+    // const id = setInterval(fetchCount, POLL_INTERVAL_MS);
     const onVisible = () => {
       if (document.visibilityState === "visible") fetchCount();
     };
@@ -75,7 +75,7 @@ export default function WaitlistForm({
 
     return () => {
       cancelled = true;
-      clearInterval(id);
+      // clearInterval(id);
       document.removeEventListener("visibilitychange", onVisible);
     };
   }, []);

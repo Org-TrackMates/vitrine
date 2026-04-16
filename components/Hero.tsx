@@ -2,9 +2,9 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen flex flex-col justify-center items-start overflow-hidden pt-36 pb-20 px-10 md:pt-28 md:pb-16 md:px-5">
       {/* Backgrounds */}
-      <div className="hero-grid" />
-      <div className="absolute top-[30%] -right-52 w-175 h-175 pointer-events-none bg-[radial-gradient(circle,rgba(200,56,42,0.06)_0%,transparent_65%)]" />
-      <div className="hero-flag" />
+      <div className="bg-hero-grid pointer-events-none absolute inset-0 animate-grid-shift" />
+      <div className="bg-hero-glow pointer-events-none absolute top-[30%] -right-50 h-175 w-175" />
+      <div className="bg-hero-flag pointer-events-none absolute top-0 right-0 h-full w-[45%]" />
 
       {/* Content */}
       <div className="relative z-10 max-w-205">
