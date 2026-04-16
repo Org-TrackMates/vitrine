@@ -1,26 +1,186 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ═══════════════════════════════════════════════════════════════
+   TRACKMATES — DESIGN TOKENS (Tailwind v4 @theme)
+   Les tokens définis ici deviennent automatiquement disponibles
+   comme classes utilitaires (ex: bg-bg, text-red, font-display).
+   ═══════════════════════════════════════════════════════════════ */
+@theme {
+  /* Couleurs marque */
+  --color-red: #c8382a;
+  --color-red-2: #a02d22;
+  --color-red-3: #e84c3d;
+  --color-red-pale: rgba(200, 56, 42, 0.08);
+  --color-red-pale-2: rgba(200, 56, 42, 0.15);
+  --color-gold: #c9a84c;
+
+  /* Couleurs fond / texte */
+  --color-bg: #0a0a0c;
+  --color-bg-2: #111114;
+  --color-bg-3: #18181c;
+  --color-bg-4: #202024;
+  --color-text: #f0ede8;
+  --color-text-2: rgba(240, 237, 232, 0.55);
+  --color-text-3: rgba(240, 237, 232, 0.28);
+  --color-border-subtle: rgba(255, 255, 255, 0.07);
+  --color-border-strong: rgba(255, 255, 255, 0.12);
+
+  /* Couleurs sémantiques (statuts, accents) */
+  --color-green: #5dcaa5;
+  --color-green-dark: #1d9e75;
+  --color-blue-fly: #85b7eb;
+  --color-rose: #f09595;
+
+  /* Typographie */
+  --font-display: var(--font-syne), sans-serif;
+  --font-body: var(--font-dm-sans), sans-serif;
+  --font-serif: var(--font-dm-serif), serif;
+
+  /* Animations custom */
+  --animate-pulse-dot: pulseDot 2s infinite;
+  --animate-grid-shift: gridShift 20s linear infinite;
+  --animate-blink: blink 1s infinite;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ═══════════════════════════════════════════════════════════════
+   KEYFRAMES
+   ═══════════════════════════════════════════════════════════════ */
+@keyframes pulseDot {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(0.85);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes gridShift {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 80px 80px;
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.08;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   BASE
+   ═══════════════════════════════════════════════════════════════ */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   UTILITAIRES SPÉCIFIQUES (effets non exprimables simplement
+   avec les classes Tailwind — on les garde en CSS pur)
+   ═══════════════════════════════════════════════════════════════ */
+@layer utilities {
+  /* Grille animée du hero */
+  .bg-hero-grid {
+    background-image:
+      linear-gradient(rgba(200, 56, 42, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(200, 56, 42, 0.03) 1px, transparent 1px);
+    background-size: 80px 80px;
+  }
+
+  /* Glow radial rouge */
+  .bg-hero-glow {
+    background: radial-gradient(
+      circle,
+      rgba(200, 56, 42, 0.06) 0%,
+      transparent 65%
+    );
+  }
+
+  /* Drapeau à damier discret */
+  .bg-hero-flag {
+    background: repeating-conic-gradient(
+        rgba(200, 56, 42, 0.04) 0% 25%,
+        transparent 0% 50%
+      )
+      0 0 / 40px 40px;
+    mask-image: linear-gradient(to left, rgba(0, 0, 0, 0.3), transparent);
+    -webkit-mask-image: linear-gradient(
+      to left,
+      rgba(0, 0, 0, 0.3),
+      transparent
+    );
+  }
+
+  /* Glow radial pour countdown et waitlist */
+  .bg-radial-red {
+    background: radial-gradient(
+      ellipse at center,
+      rgba(200, 56, 42, 0.05) 0%,
+      transparent 60%
+    );
+  }
+
+  .bg-radial-red-bottom {
+    background: radial-gradient(
+      ellipse at center bottom,
+      rgba(200, 56, 42, 0.06) 0%,
+      transparent 60%
+    );
+  }
+
+  /* Eyebrow avec trait avant (utilitaire réutilisable) */
+  .eyebrow-line::before {
+    content: "";
+    width: 24px;
+    height: 1px;
+    background: var(--color-red);
+    display: inline-block;
+  }
+
+  /* Fade-up animation au scroll */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity 0.6s ease,
+      transform 0.6s ease;
+  }
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Nav backdrop blur */
+  .nav-blur {
+    background: rgba(10, 10, 12, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
 }
